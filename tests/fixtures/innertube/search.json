@@ -1,0 +1,21 @@
+{
+  "contents": {
+    "twoColumnSearchResultsRenderer": {
+      "primaryContents": {
+        "sectionListRenderer": {
+          "contents": [
+            { "itemSectionRenderer": { "contents": [
+              { "adSlotRenderer": { "trackingParams": "ignored" } },
+              { "videoRenderer": { "videoId": "unrelated01", "title": { "runs": [{ "text": "Other Song" }] }, "ownerText": { "runs": [{ "text": "Arijit Singh - Topic" }] } } },
+              { "videoRenderer": { "videoId": "cover000001", "title": { "runs": [{ "text": "Hawayein" }, { "text": " | Cover" }] }, "ownerText": { "runs": [{ "text": "Arijit Singh - Topic" }] } } },
+              { "videoRenderer": { "videoId": "karaoke0001", "title": { "simpleText": "Hawayein | Karaoke" }, "longBylineText": { "runs": [{ "text": "Arijit Singh - Topic" }] } } },
+              { "videoRenderer": { "videoId": "slowed00001", "title": { "runs": [{ "text": "Hawayein | Slowed + Reverb" }] }, "shortBylineText": { "simpleText": "Arijit Singh - Topic" } } },
+              { "videoRenderer": { "videoId": "topic000001", "title": { "runs": [{ "text": "Hawayein" }] }, "ownerText": { "runs": [{ "text": "Arijit Singh - Topic", "navigationEndpoint": { "browseEndpoint": { "browseId": "UCfixture" } } }] } } }
+            ] } },
+            { "continuationItemRenderer": { "continuationEndpoint": { "continuationCommand": { "token": "never-follow" } } } }
+          ]
+        }
+      }
+    }
+  }
+}

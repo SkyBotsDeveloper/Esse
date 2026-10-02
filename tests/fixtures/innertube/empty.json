@@ -1,0 +1,9 @@
+{
+  "contents": { "twoColumnSearchResultsRenderer": { "primaryContents": {
+    "sectionListRenderer": { "contents": [
+      { "itemSectionRenderer": { "contents": [
+        { "backgroundPromoRenderer": { "title": { "simpleText": "No results found" } } }
+      ] } }
+    ] }
+  } } }
+}

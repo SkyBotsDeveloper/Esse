@@ -1,0 +1,22 @@
+[
+  { "id": "hindi-romantic", "title": "Ek Vaari Aa", "artist": "Arijit Singh", "category": "Hindi romantic" },
+  { "id": "hindi-longing", "title": "Agar Tum Saath Ho", "artist": "Alka Yagnik", "category": "Hindi heartbreak" },
+  { "id": "hindi-upbeat", "title": "Ilahi", "artist": "Arijit Singh", "category": "Hindi travel/free-spirited" },
+  { "id": "punjabi", "title": "Khaab", "artist": "Akhil", "category": "Punjabi romantic" },
+  { "id": "english-romantic", "title": "Perfect", "artist": "Ed Sheeran", "category": "English romantic ballad" },
+  { "id": "english-pop", "title": "Style", "artist": "Taylor Swift", "category": "English synth-pop" },
+  { "id": "energetic", "title": "Can't Hold Us", "artist": "Macklemore & Ryan Lewis", "category": "English high-energy/pop-rap" },
+  { "id": "hindi-party", "title": "Kala Chashma", "artist": "Amar Arshi, Badshah & Neha Kakkar", "category": "Hindi upbeat/party" },
+  { "id": "hindi-intense", "title": "Zinda", "artist": "Siddharth Mahadevan", "category": "Hindi motivational/intense" },
+  { "id": "punjabi-heartbreak", "title": "Mann Bharryaa", "artist": "B Praak", "category": "Punjabi heartbreak" },
+  { "id": "punjabi-energetic", "title": "Born to Shine", "artist": "Diljit Dosanjh", "category": "Punjabi energetic" },
+  { "id": "english-heartbreak", "title": "Someone Like You", "artist": "Adele", "category": "English heartbreak" },
+  { "id": "english-dark-pop", "title": "bad guy", "artist": "Billie Eilish", "category": "English dark pop" },
+  { "id": "rock-alternative", "title": "Mr. Brightside", "artist": "The Killers", "category": "Rock / alternative" },
+  { "id": "edm-electronic", "title": "Wake Me Up", "artist": "Avicii", "category": "EDM / electronic" },
+  { "id": "acoustic-songwriter", "title": "Fast Car", "artist": "Tracy Chapman", "category": "Acoustic singer-songwriter" },
+  { "id": "hip-hop", "title": "Lose Yourself", "artist": "Eminem", "category": "Hip-hop" },
+  { "id": "dance-pop", "title": "Levitating", "artist": "Dua Lipa", "category": "Dance/pop" },
+  { "id": "latin", "title": "Despacito", "artist": "Luis Fonsi", "category": "Latin" },
+  { "id": "k-pop", "title": "Dynamite", "artist": "BTS", "category": "K-pop" }
+]

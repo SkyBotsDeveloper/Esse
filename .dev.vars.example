@@ -1,0 +1,16 @@
+ELITE_API_KEY=replace-with-your-elite-key
+ELITE_BASE_URL=https://elite-llms.vercel.app/v1
+ELITE_MODEL=gpt-5.6-luna
+ELITE_TIMEOUT_MS=6000
+ENVIRONMENT=development
+GEMINI_API_KEY=replace-with-your-gemini-key
+GEMINI_MODEL=gemini-3.8-flash
+LLM_PROVIDER_ORDER=gemini,elite
+# Required local client bearer key(s), comma-separated to support rotation.
+ESSE_API_KEYS=replace-with-a-long-random-client-key
+# Optional, ordered one-pass fallbacks used after transient failures.
+GEMINI_FALLBACK_MODELS=gemini-3.7-flash,gemini-3.5-flash-lite
+# Optional final-result cache settings.
+RECOMMENDATION_CACHE_VERSION=v3
+RECOMMENDATION_CACHE_SOFT_TTL_SECONDS=43200
+RECOMMENDATION_CACHE_HARD_TTL_SECONDS=259200

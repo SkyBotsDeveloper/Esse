@@ -1,0 +1,198 @@
+openapi: 3.1.0
+info:
+  title: ESSE API
+  version: 1.0.0
+  description: Public next-song recommendation API.
+servers:
+  - url: https://esse.skybotsdeveloper.workers.dev
+paths:
+  /health:
+    get:
+      operationId: health
+      summary: Check Worker liveness
+      security: []
+      responses:
+        '200':
+          description: Worker is responding; this does not indicate provider readiness.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [status]
+                properties:
+                  status:
+                    const: ok
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+  /v1/recommend:
+    post:
+      operationId: recommend
+      summary: Recommend verified next songs
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        description: JSON request body, maximum 4096 bytes. Send only the documented fields.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RecommendRequest'
+            example:
+              song: Perfect
+              artist: Ed Sheeran
+              limit: 5
+      responses:
+        '200':
+          description: Recommendations that passed verification; fewer than requested may be returned.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RecommendResponse'
+          headers:
+            X-Request-Id:
+              $ref: '#/components/headers/RequestId'
+        '400':
+          $ref: '#/components/responses/InvalidRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+        '415':
+          $ref: '#/components/responses/InvalidRequest'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/InternalError'
+        '502':
+          $ref: '#/components/responses/UpstreamUnavailable'
+        '503':
+          description: Upstream unavailable or service configuration/internal failure.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '504':
+          $ref: '#/components/responses/UpstreamUnavailable'
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+  headers:
+    RequestId:
+      description: Identifier for this request.
+      schema:
+        type: string
+  schemas:
+    RecommendRequest:
+      type: object
+      required: [song]
+      properties:
+        song:
+          type: string
+          minLength: 1
+          maxLength: 200
+          description: Song title; non-empty after trimming and must not contain control characters.
+        artist:
+          type: string
+          minLength: 1
+          maxLength: 200
+          description: Optional artist name; if supplied, non-empty after trimming and without control characters.
+        limit:
+          type: integer
+          minimum: 1
+          maximum: 5
+          default: 5
+    Recommendation:
+      type: object
+      required: [title, artist]
+      properties:
+        title:
+          type: string
+        artist:
+          type: string
+    RecommendResponse:
+      type: object
+      required: [seed, recommendations, count]
+      properties:
+        seed:
+          type: object
+          required: [title]
+          properties:
+            title:
+              type: string
+            artist:
+              type: string
+        recommendations:
+          type: array
+          maxItems: 5
+          items:
+            $ref: '#/components/schemas/Recommendation'
+        count:
+          type: integer
+          minimum: 0
+          maximum: 5
+          description: Equals the number of items in recommendations and does not exceed the requested limit.
+    ErrorResponse:
+      type: object
+      required: [error]
+      properties:
+        error:
+          type: object
+          required: [code, message, requestId]
+          properties:
+            code:
+              type: string
+              enum: [invalid_request, unauthorized, not_found, method_not_allowed, rate_limited, upstream_unavailable, internal_error]
+            message:
+              type: string
+            requestId:
+              type: string
+  responses:
+    InvalidRequest:
+      description: Invalid JSON, request fields, body size, or content type.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Unauthorized:
+      description: Missing or invalid bearer key.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    NotFound:
+      description: Unknown route.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    MethodNotAllowed:
+      description: Wrong method for a known route.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    RateLimited:
+      description: Per-client rate limit reached.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    UpstreamUnavailable:
+      description: Recommendation provider or verification dependency is unavailable.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    InternalError:
+      description: Unexpected, configuration, or internal service failure.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'

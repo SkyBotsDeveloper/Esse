@@ -1,0 +1,12 @@
+{
+  "contents": { "twoColumnSearchResultsRenderer": { "primaryContents": {
+    "richGridRenderer": { "contents": [
+      { "richItemRenderer": { "content": { "videoRenderer": {
+        "videoId": "official001",
+        "title": { "simpleText": "Hawayein - Official Music Video | Arijit Singh" },
+        "ownerText": { "runs": [{ "text": "Sony Music India" }] },
+        "ownerBadges": [{ "metadataBadgeRenderer": { "style": "BADGE_STYLE_TYPE_VERIFIED" } }]
+      } } } }
+    ] }
+  } } }
+}

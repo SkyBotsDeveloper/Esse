@@ -1,0 +1,27 @@
+{
+  "contents": { "twoColumnSearchResultsRenderer": { "primaryContents": { "sectionListRenderer": { "contents": [
+    { "itemSectionRenderer": { "contents": [
+      { "videoRenderer": { "videoId": "offvideo001", "title": { "simpleText": "Signal - Official Video | Olive Band" }, "ownerText": { "simpleText": "Example Records" } } },
+      { "videoRenderer": { "videoId": "offmusic001", "title": { "simpleText": "Signal - Official Music Video | Olive Band" }, "ownerText": { "simpleText": "Example Records" } } },
+      { "videoRenderer": { "videoId": "offaudio001", "title": { "simpleText": "Signal - Official Audio | Olive Band" }, "ownerText": { "simpleText": "Example Records" } } },
+      { "videoRenderer": { "videoId": "soundtrk002", "title": { "simpleText": "Signal | Example Movie Soundtrack | Olive Band" }, "ownerText": { "simpleText": "Example Records" } } },
+      { "videoRenderer": { "videoId": "labelpromo1", "title": { "simpleText": "Full Video: Signal | New Album Out Now | Olive Band" }, "ownerText": { "simpleText": "Example Records" } } },
+      { "videoRenderer": { "videoId": "substring01", "title": { "simpleText": "Signal | Deliver the Night | Olive Band" }, "ownerText": { "simpleText": "Example Records" } } },
+      { "videoRenderer": { "videoId": "harmless001", "title": { "simpleText": "Signal Version | Olive Band" }, "ownerText": { "simpleText": "Live Records" } } },
+      { "videoRenderer": { "videoId": "lyricvideo1", "title": { "simpleText": "Signal - Official Lyric Video | Olive Band" }, "ownerText": { "simpleText": "Example Records" } } },
+      { "videoRenderer": { "videoId": "covermark01", "title": { "simpleText": "Signal Cover | Olive Band" }, "ownerText": { "simpleText": "Olive Band - Topic" } } },
+      { "videoRenderer": { "videoId": "karaokemark", "title": { "simpleText": "Signal Karaoke | Olive Band" }, "ownerText": { "simpleText": "Olive Band - Topic" } } },
+      { "videoRenderer": { "videoId": "slowedmark1", "title": { "simpleText": "Signal Slowed | Olive Band" }, "ownerText": { "simpleText": "Olive Band - Topic" } } },
+      { "videoRenderer": { "videoId": "slowreverb1", "title": { "simpleText": "Signal Slowed + Reverb | Olive Band" }, "ownerText": { "simpleText": "Olive Band - Topic" } } },
+      { "videoRenderer": { "videoId": "spedupmark1", "title": { "simpleText": "Signal Sped Up | Olive Band" }, "ownerText": { "simpleText": "Olive Band - Topic" } } },
+      { "videoRenderer": { "videoId": "nightcore01", "title": { "simpleText": "Signal Nightcore | Olive Band" }, "ownerText": { "simpleText": "Olive Band - Topic" } } },
+      { "videoRenderer": { "videoId": "reaction001", "title": { "simpleText": "Signal Reaction | Olive Band" }, "ownerText": { "simpleText": "Olive Band - Topic" } } },
+      { "videoRenderer": { "videoId": "tutorial001", "title": { "simpleText": "Signal Tutorial | Olive Band" }, "ownerText": { "simpleText": "Olive Band - Topic" } } },
+      { "videoRenderer": { "videoId": "fanedit0001", "title": { "simpleText": "Signal Fan Edit | Olive Band" }, "ownerText": { "simpleText": "Olive Band - Topic" } } },
+      { "videoRenderer": { "videoId": "remixmark01", "title": { "simpleText": "Signal Remix | Olive Band" }, "ownerText": { "simpleText": "Olive Band - Topic" } } },
+      { "videoRenderer": { "videoId": "liveversion", "title": { "simpleText": "Signal Live Version | Olive Band" }, "ownerText": { "simpleText": "Olive Band - Topic" } } },
+      { "videoRenderer": { "videoId": "instrmnt001", "title": { "simpleText": "Signal Instrumental | Olive Band" }, "ownerText": { "simpleText": "Olive Band - Topic" } } },
+      { "videoRenderer": { "videoId": "livechan001", "title": { "simpleText": "Signal Official Audio | Olive Band" }, "ownerText": { "simpleText": "Live Records" } } }
+    ] } }
+  ] } } } }
+}

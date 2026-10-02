@@ -1,0 +1,12 @@
+node_modules/
+dist/
+dist-staging/
+.wrangler/
+.dev.vars*
+!.dev.vars.example
+.secrets.*
+.env*
+!.env.example
+coverage/
+eval-results/
+*.log

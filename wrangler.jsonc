@@ -1,0 +1,115 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "esse",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-09-27",
+  "vars": {
+    "ENVIRONMENT": "production",
+    "ELITE_BASE_URL": "https://elite-llms.vercel.app/v1",
+    "ELITE_MODEL": "gpt-5.6-luna",
+    "ELITE_TIMEOUT_MS": "6000",
+    "GEMINI_MODEL": "gemini-3.8-flash",
+    "LLM_PROVIDER_ORDER": "gemini,elite",
+    "GEMINI_FALLBACK_MODELS": "gemini-3.7-flash,gemini-3.5-flash-lite",
+    "RECOMMENDATION_CACHE_VERSION": "v3",
+    "RECOMMENDATION_CACHE_SOFT_TTL_SECONDS": "43200",
+    "RECOMMENDATION_CACHE_HARD_TTL_SECONDS": "259200"
+  },
+  "secrets": {
+    "required": [
+      "ESSE_API_KEYS",
+      "GEMINI_API_KEY"
+    ]
+  },
+  "ratelimits": [
+    {
+      "name": "RECOMMEND_RATE_LIMITER",
+      "namespace_id": "6325554155599",
+      "simple": {
+        "limit": 60,
+        "period": 60
+      }
+    },
+    {
+      "name": "RECOMMEND_GENERATION_RATE_LIMITER",
+      "namespace_id": "4473600108333",
+      "simple": {
+        "limit": 10,
+        "period": 60
+      }
+    }
+  ],
+  "observability": {
+    "enabled": true,
+    "redact_query_string": true,
+    "logs": {
+      "enabled": true,
+      "head_sampling_rate": 1,
+      "invocation_logs": false,
+      "persist": true
+    },
+    "traces": {
+      "enabled": true,
+      "head_sampling_rate": 0.1,
+      "persist": true
+    }
+  },
+  "env": {
+    "staging": {
+      "name": "esse-staging",
+      "workers_dev": true,
+      "vars": {
+        "ENVIRONMENT": "staging",
+        "STAGING_RATE_LIMIT_NAMESPACE_IDS_PLACEHOLDER": "allocated-random-staging-only",
+        "ELITE_BASE_URL": "https://elite-llms.vercel.app/v1",
+        "ELITE_MODEL": "gpt-5.6-luna",
+        "ELITE_TIMEOUT_MS": "6000",
+        "GEMINI_MODEL": "gemini-3.8-flash",
+        "LLM_PROVIDER_ORDER": "gemini,elite",
+        "GEMINI_FALLBACK_MODELS": "gemini-3.7-flash,gemini-3.5-flash-lite",
+        "RECOMMENDATION_CACHE_VERSION": "v3",
+        "RECOMMENDATION_CACHE_SOFT_TTL_SECONDS": "43200",
+        "RECOMMENDATION_CACHE_HARD_TTL_SECONDS": "259200"
+      },
+      "secrets": {
+        "required": [
+          "ESSE_API_KEYS",
+          "GEMINI_API_KEY"
+        ]
+      },
+      "ratelimits": [
+        {
+          "name": "RECOMMEND_RATE_LIMITER",
+          "namespace_id": "6950096561309516",
+          "simple": {
+            "limit": 60,
+            "period": 60
+          }
+        },
+        {
+          "name": "RECOMMEND_GENERATION_RATE_LIMITER",
+          "namespace_id": "4371394460380798",
+          "simple": {
+            "limit": 10,
+            "period": 60
+          }
+        }
+      ],
+      "observability": {
+        "enabled": true,
+        "redact_query_string": true,
+        "logs": {
+          "enabled": true,
+          "head_sampling_rate": 1,
+          "invocation_logs": false,
+          "persist": true
+        },
+        "traces": {
+          "enabled": true,
+          "head_sampling_rate": 0.1,
+          "persist": true
+        }
+      }
+    }
+  }
+}
